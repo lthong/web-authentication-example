@@ -5,7 +5,7 @@ import CommentBox from 'components/CommentBox';
 import CommentList from 'components/CommentList';
 
 let wrapped;
-beforeEach(() => {
+beforeAll(() => {
   wrapped = shallow(<App />);
 });
 
@@ -14,6 +14,5 @@ it('show a comment box', () => {
 });
 
 it('show a comment list', () => {
-  const wrapped = shallow(<App />);
   expect(wrapped.find(CommentList).length).toEqual(1);
 });

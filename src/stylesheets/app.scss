@@ -1,0 +1,26 @@
+.app {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 3% 0;
+  .comment-box {
+    height: 40vh;
+    width: 70%;
+    form {
+      display: flex;
+      flex-direction: column;
+      textarea {
+        min-height: 100px;
+        margin-bottom: 15px;
+      }
+      .btns {
+        display: flex;
+        justify-content: flex-end;
+        input {
+          width: 15%;
+          margin: 0 5px;
+        }
+      }
+    }
+  }
+}
