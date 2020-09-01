@@ -10,9 +10,9 @@ beforeAll(() => {
 });
 
 it('show a comment box', () => {
-  expect(wrapped.find(CommentBox).length).toEqual(1);
+  expect(wrapped.find(CommentBox).length).toBe(1);
 });
 
 it('show a comment list', () => {
-  expect(wrapped.find(CommentList).length).toEqual(1);
+  expect(wrapped.find(CommentList).length).toBe(1);
 });

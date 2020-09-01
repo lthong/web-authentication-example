@@ -1,4 +1,6 @@
 import React, { useCallback, useState } from 'react';
+import { connect } from 'react-redux';
+import { addComment } from 'actions/comments';
 
 const CommentBox = () => {
   const [comment, setComment] = useState('');
@@ -10,9 +12,10 @@ const CommentBox = () => {
   const onFormSubmit = useCallback(
     (e) => {
       e.preventDefault();
+      addComment(comment);
       resetComment();
     },
-    [resetComment]
+    [resetComment, comment]
   );
 
   const onCommentChange = useCallback((e) => {
@@ -34,4 +37,4 @@ const CommentBox = () => {
   );
 };
 
-export default CommentBox;
+export default connect(null, { addComment })(CommentBox);
