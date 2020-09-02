@@ -2,7 +2,7 @@ import React, { useCallback, useState } from 'react';
 import { connect } from 'react-redux';
 import { addComment } from 'actions/comments';
 
-const CommentBox = () => {
+const CommentBox = ({ addComment }) => {
   const [comment, setComment] = useState('');
 
   const resetComment = useCallback(() => {
@@ -15,7 +15,7 @@ const CommentBox = () => {
       addComment(comment);
       resetComment();
     },
-    [resetComment, comment]
+    [resetComment, addComment, comment]
   );
 
   const onCommentChange = useCallback((e) => {

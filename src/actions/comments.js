@@ -6,3 +6,10 @@ export const addComment = (comment) => {
     payload: comment,
   };
 };
+
+export const deleteComment = (index) => {
+  return {
+    type: cons.DELETE_COMMENT,
+    index,
+  };
+};
