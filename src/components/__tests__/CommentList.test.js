@@ -4,14 +4,14 @@ import Im from 'immutable';
 import CommentList from 'components/CommentList';
 import Root from 'Root';
 
-let wrapped;
+let wrapper;
 beforeEach(() => {
   const initState = {
     comments: {
       comments: Im.fromJS(['comment1', 'comment2']),
     },
   };
-  wrapped = mount(
+  wrapper = mount(
     <Root initState={initState}>
       <CommentList />
     </Root>
@@ -19,5 +19,5 @@ beforeEach(() => {
 });
 
 it('creates one <div className="item"> per comment', () => {
-  expect(wrapped.find('.comment-list').find('.item').length).toEqual(2);
+  expect(wrapper.find('.comment-list').find('.item').length).toEqual(2);
 });

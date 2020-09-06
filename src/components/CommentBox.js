@@ -29,7 +29,7 @@ const CommentBox = ({ addComment }) => {
         <h3>New Comment</h3>
         <textarea value={comment} onChange={onCommentChange} />
         <div className="btns">
-          <input type="submit" />
+          <input type="submit" disabled={!comment} />
           <input type="reset" onClick={resetComment} />
         </div>
       </form>

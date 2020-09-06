@@ -4,15 +4,15 @@ import App from 'components/App';
 import CommentBox from 'components/CommentBox';
 import CommentList from 'components/CommentList';
 
-let wrapped;
+let wrapper;
 beforeAll(() => {
-  wrapped = shallow(<App />);
+  wrapper = shallow(<App />);
 });
 
 it('show a comment box', () => {
-  expect(wrapped.find(CommentBox).length).toBe(1);
+  expect(wrapper.find(CommentBox).length).toBe(1);
 });
 
 it('show a comment list', () => {
-  expect(wrapped.find(CommentList).length).toBe(1);
+  expect(wrapper.find(CommentList).length).toBe(1);
 });
