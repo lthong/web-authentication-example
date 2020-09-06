@@ -21,3 +21,9 @@ beforeEach(() => {
 it('creates one <div className="item"> per comment', () => {
   expect(wrapper.find('.comment-list').find('.item').length).toEqual(2);
 });
+
+it('the text of each comment is correct', () => {
+  // console.log(wrapper.render().text()); // print out: comment1comment2
+  expect(wrapper.render().text()).toContain('comment1');
+  expect(wrapper.render().text()).toContain('comment2');
+});

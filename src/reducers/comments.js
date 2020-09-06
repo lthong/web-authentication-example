@@ -17,6 +17,16 @@ export default (state = initialState, action) => {
         ...state,
         comments: state.comments.delete(action.index),
       };
+    case cons.FETCH_COMMENTS:
+      return {
+        ...state,
+        comments: Im.fromJS(
+          action.payload.data.reduce(
+            (acc, comment) => acc.push(comment.name),
+            state.comments
+          )
+        ),
+      };
 
     default:
       return state;

@@ -1,8 +1,8 @@
 import React, { useCallback, useState } from 'react';
 import { connect } from 'react-redux';
-import { addComment } from 'actions/comments';
+import { addComment, fetchComments } from 'actions/comments';
 
-const CommentBox = ({ addComment }) => {
+const CommentBox = ({ addComment, fetchComments }) => {
   const [comment, setComment] = useState('');
 
   const resetComment = useCallback(() => {
@@ -12,6 +12,7 @@ const CommentBox = ({ addComment }) => {
   const onFormSubmit = useCallback(
     (e) => {
       e.preventDefault();
+      if (!comment) return;
       addComment(comment);
       resetComment();
     },
@@ -23,6 +24,10 @@ const CommentBox = ({ addComment }) => {
     setComment(value);
   }, []);
 
+  const onFetchComments = useCallback(() => {
+    fetchComments();
+  }, [fetchComments]);
+
   return (
     <div className="comment-box">
       <form onSubmit={onFormSubmit}>
@@ -31,10 +36,13 @@ const CommentBox = ({ addComment }) => {
         <div className="btns">
           <input type="submit" disabled={!comment} />
           <input type="reset" onClick={resetComment} />
+          <button className="fetch-comments" onClick={onFetchComments}>
+            更多留言
+          </button>
         </div>
       </form>
     </div>
   );
 };
 
-export default connect(null, { addComment })(CommentBox);
+export default connect(null, { addComment, fetchComments })(CommentBox);
