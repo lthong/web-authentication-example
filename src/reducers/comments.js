@@ -2,7 +2,7 @@ import Im from 'immutable';
 import * as cons from 'constants/comments';
 
 const initialState = {
-  comments: Im.List(),
+  comments: Im.List(['Hello React!']),
 };
 
 export default (state = initialState, action) => {

@@ -1,5 +1,27 @@
 .app {
-  padding: 3% 0;
+  .nav {
+    width: 100%;
+    border: 1px solid #e7e7e7;
+    background-color: #f3f3f3;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    a {
+      display: inline-block;
+      color: #666;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      &:hover {
+        background-color: #ddd;
+      }
+      &.active {
+        color: white;
+        background-color: #008cba;
+      }
+    }
+  }
   .comment-box {
     display: flex;
     align-items: center;
@@ -28,7 +50,7 @@
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    margin: 10px 10%;
+    margin: 30px 10% 0;
     .item {
       position: relative;
       width: 20%;

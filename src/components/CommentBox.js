@@ -1,8 +1,10 @@
 import React, { useCallback, useState } from 'react';
 import { connect } from 'react-redux';
 import { addComment, fetchComments } from 'actions/comments';
+import { useHistory } from 'react-router-dom';
 
 const CommentBox = ({ addComment, fetchComments }) => {
+  const history = useHistory();
   const [comment, setComment] = useState('');
 
   const resetComment = useCallback(() => {
@@ -15,8 +17,9 @@ const CommentBox = ({ addComment, fetchComments }) => {
       if (!comment) return;
       addComment(comment);
       resetComment();
+      history.push('/comments');
     },
-    [resetComment, addComment, comment]
+    [resetComment, addComment, comment, history]
   );
 
   const onCommentChange = useCallback((e) => {
@@ -26,7 +29,8 @@ const CommentBox = ({ addComment, fetchComments }) => {
 
   const onFetchComments = useCallback(() => {
     fetchComments();
-  }, [fetchComments]);
+    history.push('/comments');
+  }, [fetchComments, history]);
 
   return (
     <div className="comment-box">
