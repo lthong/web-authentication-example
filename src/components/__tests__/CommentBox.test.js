@@ -1,5 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
+import { BrowserRouter } from 'react-router-dom';
 import CommentBox from 'components/CommentBox';
 import Root from 'Root';
 
@@ -7,7 +8,9 @@ let wrapper;
 beforeEach(() => {
   wrapper = mount(
     <Root>
-      <CommentBox />
+      <BrowserRouter>
+        <CommentBox />
+      </BrowserRouter>
     </Root>
   );
 });

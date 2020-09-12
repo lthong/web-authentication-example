@@ -1,5 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
+import { BrowserRouter } from 'react-router-dom';
+import Im from 'immutable';
 import moxios from 'moxios';
 import Root from 'Root';
 import App from 'components/App';
@@ -17,9 +19,16 @@ afterEach(() => {
 });
 
 it('can fetch a list of comments and display them', (done) => {
+  const initState = {
+    comments: {
+      comments: Im.fromJS([]),
+    },
+  };
   const wrapper = mount(
-    <Root>
-      <App />
+    <Root initState={initState}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
     </Root>
   );
 
