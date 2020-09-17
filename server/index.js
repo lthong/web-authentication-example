@@ -10,8 +10,9 @@ const router = require('./router');
 mongoose.connect('mongodb://localhost/auth', {
   useUnifiedTopology: true,
   useNewUrlParser: true,
+  useCreateIndex: true,
 });
-mongoose.connection.on('connected', function () {
+mongoose.connection.on('connected', () => {
   console.log('connected to db successful!');
 });
 
