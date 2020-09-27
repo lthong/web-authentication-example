@@ -35,4 +35,8 @@ const signup = (req, res, next) => {
   });
 };
 
-module.exports = { signup };
+const signin = (req, res) => {
+  res.send({ token: getToken(req.user.id) });
+};
+
+module.exports = { signup, signin };

@@ -1,12 +1,10 @@
 const auth = require('./controllers/atuh');
-require('./service/passport');
-const passport = require('passport');
-
-const requireAuth = passport.authenticate('jwt', { session: false });
+const { checkTokenValid, checkLoginValid } = require('./service/passport');
 
 module.exports = (app) => {
-  app.get('/', requireAuth, function (req, res) {
+  app.get('/', checkTokenValid, function (req, res) {
     res.send('Hello server!');
   });
+  app.post('/signin', checkLoginValid, auth.signin);
   app.post('/signup', auth.signup);
 };
