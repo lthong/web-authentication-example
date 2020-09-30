@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/web-authentication-example/static/css/main.5ecd60fb.chunk.css",
+    "main.js": "/web-authentication-example/static/js/main.3836bb6c.chunk.js",
+    "main.js.map": "/web-authentication-example/static/js/main.3836bb6c.chunk.js.map",
+    "runtime-main.js": "/web-authentication-example/static/js/runtime-main.739f4530.js",
+    "runtime-main.js.map": "/web-authentication-example/static/js/runtime-main.739f4530.js.map",
+    "static/js/2.fdd18e55.chunk.js": "/web-authentication-example/static/js/2.fdd18e55.chunk.js",
+    "static/js/2.fdd18e55.chunk.js.map": "/web-authentication-example/static/js/2.fdd18e55.chunk.js.map",
+    "index.html": "/web-authentication-example/index.html",
+    "precache-manifest.46572684d96f06bd811cb85a4cb2fbea.js": "/web-authentication-example/precache-manifest.46572684d96f06bd811cb85a4cb2fbea.js",
+    "service-worker.js": "/web-authentication-example/service-worker.js",
+    "static/css/main.5ecd60fb.chunk.css.map": "/web-authentication-example/static/css/main.5ecd60fb.chunk.css.map",
+    "static/js/2.fdd18e55.chunk.js.LICENSE.txt": "/web-authentication-example/static/js/2.fdd18e55.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.739f4530.js",
+    "static/js/2.fdd18e55.chunk.js",
+    "static/css/main.5ecd60fb.chunk.css",
+    "static/js/main.3836bb6c.chunk.js"
+  ]
+}
