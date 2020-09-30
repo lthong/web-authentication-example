@@ -1,3 +1,11 @@
-## React Testing Example
+## Web Authentication Example
 
-React testing project using Redux, Jest and Enzyme.
+### Client
+
+The web authentication application using React and Redux.
+
+### Server
+
+Build a scaleable API with authentication using Express, Mongo, and Passport.
+
+For the demo, please check [here](https://lthong.github.io/web-authentication-example)!
