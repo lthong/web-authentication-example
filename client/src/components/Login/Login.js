@@ -1,18 +1,33 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useEffect } from 'react';
+import { connect } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import UserForm from 'components/UserForm';
+import { signin, resetAuthErrMsg } from 'actions/auth';
 
-const Login = () => {
+const Login = ({ signin, resetAuthErrMsg }) => {
   const history = useHistory();
   const onLogin = useCallback(
-    (e) => {
-      e.preventDefault();
-      history.push('/');
+    (formData) => {
+      signin({
+        formData,
+        cb: () => {
+          history.push('/');
+        },
+      });
     },
-    [history]
+    [history, signin]
   );
+
+  useEffect(() => {
+    return () => {
+      resetAuthErrMsg();
+    };
+  });
 
   return <UserForm formType='login' onSubmit={onLogin} />;
 };
 
-export default Login;
+export default connect(null, {
+  signin,
+  resetAuthErrMsg,
+})(Login);
