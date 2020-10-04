@@ -20,7 +20,7 @@ const UserForm = ({
         <div className='links'>
           <Link to='/signup'>Signup</Link>
           <span className='partition'>|</span>
-          <Link to='/'>Skip</Link>
+          <Link to='/?isForDemo=true'>Skip</Link>
         </div>
       ),
     [formType]

@@ -1,19 +1,29 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
+import React, { useCallback } from 'react';
+import { NavLink, useHistory } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { logout } from 'actions/auth';
 
-const Header = () => {
+const Header = ({ logout }) => {
+  const history = useHistory();
+  const onLogout = useCallback(() => {
+    logout();
+    history.push('/login');
+  }, [logout, history]);
+
   return (
     <div className='header'>
       <NavLink exact to='/' activeClassName='active'>
         Home
       </NavLink>
       <div className='right-navs'>
-        <NavLink to='/login' activeClassName='active' className='logout'>
+        <div className='logout' onClick={onLogout}>
           Logout
-        </NavLink>
+        </div>
       </div>
     </div>
   );
 };
 
-export default Header;
+export default connect(null, {
+  logout,
+})(Header);

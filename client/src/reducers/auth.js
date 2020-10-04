@@ -3,6 +3,7 @@ import * as cons from 'constants/auth';
 const initState = {
   token: '',
   authErrMsg: '',
+  userGreeting: '',
 };
 
 export default (state = initState, action) => {
@@ -23,6 +24,12 @@ export default (state = initState, action) => {
       return {
         ...state,
         authErrMsg: initState.authErrMsg,
+      };
+
+    case cons.GET_USER_GREETINGS:
+      return {
+        ...state,
+        userGreeting: action.payload,
       };
 
     default:

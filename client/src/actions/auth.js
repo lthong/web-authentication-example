@@ -47,3 +47,20 @@ export const resetAuthErrMsg = () => {
     type: cons.RESET_USER_AUTH_ERR_MSG,
   };
 };
+
+export const logout = () => {
+  localStorage.removeItem('token');
+  return {
+    type: cons.UPDATE_TOKEN,
+    token: '',
+  };
+};
+
+export const getUserGreetings = () => (dispatch, getState) => {
+  const token = getState().auth.token;
+  axios
+    .get('http://localhost:3090/', { headers: { authorization: token } })
+    .then((response) => {
+      dispatch({ type: cons.GET_USER_GREETINGS, payload: response.data });
+    });
+};
