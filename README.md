@@ -4,6 +4,8 @@
 
 This project is an example of user authentication.
 
+![demo](https://github.com/lthong/web-authentication-example/blob/master/auth-example-demo.gif)
+
 For the demo, please check [here](https://lthong.github.io/web-authentication-example)!
 
 **Note:** The demo of the project may be incomplete, because the server is set to be used locally, if you want to get the complete demo, please setup the project locally.
