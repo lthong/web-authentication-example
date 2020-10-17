@@ -15,6 +15,7 @@ For the demo, please check [here](https://lthong.github.io/web-authentication-ex
 The web authentication application using React and Redux.
 
 ```
+cd client
 yarn
 yarn start
 ```
@@ -26,6 +27,7 @@ Build a scaleable API with authentication using Express, Mongo, and Passport.
 **DB Setup**
 
 ```
+cd server
 brew tap mongodb/brew
 brew install mongodb-community@4.4
 sudo mkdir -p /data/db
@@ -36,12 +38,15 @@ mongod
 **Server Setup**
 
 ```
+cd server
 yarn
 yarn run dev
 ```
 
 ### Features
 
+- Home Page
+  - Redirect to login page if user does not login
 - Login
   - Form Validation
   - User indentify
